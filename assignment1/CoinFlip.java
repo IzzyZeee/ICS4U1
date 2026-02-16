@@ -10,8 +10,7 @@ public class CoinFlip {
         ArrayList<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < number; i++) {
-            result.add((int) (Math.random() + 0.5)); // Math.random gives you a decimal from 0-1, which when you add 1,
-                                                     // has a 50% chance of truncating to 0 or 1
+            result.add((int) (Math.random() + 0.5)); // Math.random gives you a decimal from 0-1, which when you add 1, has a 50% chance of truncating to 0 or 1
         }
 
         return result;
@@ -24,10 +23,10 @@ public class CoinFlip {
 
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("Hey there! How many coins do you want to flip? (Positive integer):");
+        System.out.println("Hello fellow human! How many coins do you want to flip? (Positive integer):");
+        System.out.println();
 
         int number = 0;
-        System.out.println();
 
         try { // In case a non-integer value is entered (or other error)
             number = keyboard.nextInt();
@@ -36,7 +35,7 @@ public class CoinFlip {
             System.exit(0);
         }
 
-        if (number <= 0) { // Makes sure valid input
+        if (number <= 0) { // Makes sure valid integer input
             System.out.println("Invalid input, must be a positive integer.");
             System.exit(0);
         }
