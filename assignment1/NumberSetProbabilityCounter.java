@@ -38,5 +38,27 @@ public class NumberSetProbabilityCounter {
             System.exit(0);
         }
 
+        System.out.println("The probability of selecting which item in your set do you want to know?");
+        System.out.println();
+
+        int item = 0;
+        int count = 0;
+
+        try { // In case a non-integer value is entered (or other error)
+                item = Integer.parseInt(keyboard.nextLine());
+            } catch (Exception e) { // Error instantly quits so DON'T mess up lol
+                System.out.println("Invalid input, must be an integer.");
+                System.exit(0);
+            }
+
+        for (int i = 0; i < set.size(); i++) {
+            if (item == set.get(i)) {
+                count ++;
+            }
+        }
+
+        System.out.println("The probability of getting a " + item + " in your set is " + count + "/" + set.size() + " or " + (count / set.size()) + "%.");
+        keyboard.close();
+
     }
 }
