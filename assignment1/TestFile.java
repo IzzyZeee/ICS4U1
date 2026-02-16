@@ -1,11 +1,42 @@
 package assignment1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestFile {
     public static void main(String[] args) throws Exception {
         // This file is just for tests, to help write the main stuff, formatting and
         // stuff doesn't matter
+
+
+          //  public static ArrayList<Integer> generate(int numberOfRolls, int maxNumber) {
+
+        // int numberOfRolls = 10;
+        int maxNumber = 10;
+
+        // for (int i = 0; i < numberOfRolls; i++) {
+            double random = Math.random();
+
+            if (random == 1) { // Extremely rare case. It technically messes with the probability, but is negligible
+                System.out.println(maxNumber);
+                // continue;
+            }
+
+            for (int j = 1; j <= maxNumber; j++) {
+                if (random < ((1.0 / maxNumber) * (j))) { // Basically, checking each n/maxNumber for n is a whole number less than maxNumber
+                System.out.println(j);
+                break;
+                }
+            }
+
+        // }
+
+
+
+        // return result;
+
+
+
         // For generating a number from 1-6:
         /*
          * First do 1/2 to see if it'll be even or odd
@@ -14,65 +45,68 @@ public class TestFile {
          * If that 1/3 isn't reached, do a last 50/50 to determine
          */
 
-        int countOne = 0;
-        int countTwo = 0;
-        int countThr = 0;
-        int countFou = 0;
-        int countFiv = 0;
-        int countSix = 0;
+        // int countOne = 0;
+        // int countTwo = 0;
+        // int countThr = 0;
+        // int countFou = 0;
+        // int countFiv = 0;
+        // int countSix = 0;
 
-        for (int i = 0; i < 100; i++) {
+        // for (int i = 0; i < 100; i++) {
 
-            int finalResult = 0;
-            int firstResult = (int) (Math.random() + 0.5);
+        //     int finalResult = 0;
+        //     int firstResult = (int) (Math.random() + 0.5);
 
-            if (firstResult == 1) { // Odd
+        //     if (firstResult == 1) { // Odd
 
-                int secondResult = (int) (Math.random() + (1.0 / 3));
+        //         int secondResult = (int) (Math.random() + (1.0 / 3));
 
-                if (secondResult == 1) { // This has a 1/3 chance, multiplied with 1/2 gives 1/6. This will be "1"
-                    finalResult = 1;
-                    countOne++;
-                } else {
+        //         if (secondResult == 1) { // This has a 1/3 chance, multiplied with 1/2 gives 1/6. This will be "1"
+        //             finalResult = 1;
+        //             countOne++;
+        //         } else {
 
-                    int thirdResult = (int) (Math.random() + 0.5);
+        //             int thirdResult = (int) (Math.random() + 0.5);
 
-                    if (thirdResult == 1) {
-                        finalResult = 3;
-                        countThr++;
-                    } else {
-                        finalResult = 5;
-                        countFiv++;
-                    }
+        //             if (thirdResult == 1) {
+        //                 finalResult = 3;
+        //                 countThr++;
+        //             } else {
+        //                 finalResult = 5;
+        //                 countFiv++;
+        //             }
 
-                }
+        //         }
 
-            } else { // Even
+        //     } else { // Even
 
-                int secondResult = (int) (Math.random() + (1.0 / 3));
+        //         int secondResult = (int) (Math.random() + (1.0 / 3));
 
-                if (secondResult == 1) { // This has a 1/3 chance, multiplied with 1/2 gives 1/6. This will be "2"
-                    finalResult = 2;
-                    countTwo++;
-                } else {
+        //         if (secondResult == 1) { // This has a 1/3 chance, multiplied with 1/2 gives 1/6. This will be "2"
+        //             finalResult = 2;
+        //             countTwo++;
+        //         } else {
 
-                    int thirdResult = (int) (Math.random() + 0.5);
+        //             int thirdResult = (int) (Math.random() + 0.5);
 
-                    if (thirdResult == 1) {
-                        finalResult = 4;
-                        countFou++;
-                    } else {
-                        finalResult = 6;
-                        countSix++;
-                    }
+        //             if (thirdResult == 1) {
+        //                 finalResult = 4;
+        //                 countFou++;
+        //             } else {
+        //                 finalResult = 6;
+        //                 countSix++;
+        //             }
 
-                }
+        //         }
 
-            }
+        //     }
 
-            System.out.println(finalResult);
-        }
+        //     System.out.println(finalResult);
+        // }
         
-        System.out.println(countOne + " " + countTwo + " " + countThr + " " + countFou + " " + countFiv + " " + countSix);
+        // System.out.println(countOne + " " + countTwo + " " + countThr + " " + countFou + " " + countFiv + " " + countSix);
+
+      
     }
+    
 }
