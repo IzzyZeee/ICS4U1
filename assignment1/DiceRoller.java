@@ -17,56 +17,50 @@ public class DiceRoller {
         int sum = 0;
 
         for (int i = 0; i < number; i++) {
-            int finalResult = 0; // This is the random 1-6 number that'll be returned
-            int firstResult = (int) (Math.random() + 0.5);
+            double random = Math.random();
 
-            if (firstResult == 1) { // Odd
-
-                int secondResult = (int) (Math.random() + (1.0 / 3));
-
-                if (secondResult == 1) { // This has a 1/3 chance, multiplied with 1/2 gives 1/6. This will be "1"
-                    finalResult = 1;
-                    countOne++;
-                } else {
-
-                    int thirdResult = (int) (Math.random() + 0.5);
-
-                    if (thirdResult == 1) {
-                        finalResult = 3;
-                        countThr++;
-                    } else {
-                        finalResult = 5;
-                        countFiv++;
-                    }
-
-                }
-
-            } else { // Even
-
-                int secondResult = (int) (Math.random() + (1.0 / 3));
-
-                if (secondResult == 1) { // This has a 1/3 chance, multiplied with 1/2 gives 1/6. This will be "2"
-                    finalResult = 2;
-                    countTwo++;
-                } else {
-
-                    int thirdResult = (int) (Math.random() + 0.5);
-
-                    if (thirdResult == 1) {
-                        finalResult = 4;
-                        countFou++;
-                    } else {
-                        finalResult = 6;
-                        countSix++;
-                    }
-
-                }
+            if (random == 1) { // Extremely rare case. It technically messes with the probability, but is negligible
+                result.add(6);
+                sum += 6;
+                countSix++; 
+                continue;
             }
 
-            result.add(finalResult);
-            sum += finalResult;
+            for (int j = 1; j <= 6; j++) {
+
+                if (random < ((1.0 / 6) * (j))) { // Basically, checking each n/maxNumber for n is a whole number less than maxNumber
+                    result.add(j);
+                    sum += j;
+                    
+                    switch (j) { // Add to their respective counts
+                        case 1:
+                            countOne++;
+                            break;
+                        case 2:
+                            countTwo++;
+                            break;
+                        case 3:
+                            countThr++;   
+                            break;
+                        case 4:
+                            countFou++;
+                            break;
+                        case 5:
+                            countFiv++;
+                            break;
+                        case 6:
+                            countSix++;
+                            break;
+                        }
+
+                    break;
+                }
+
+            }
+
         }
 
+    
         result.add(sum); // So we can give back the sum/number counts- this'll be unpacked manually later (bad strategy though, needs optimization)
         result.add(countOne);
         result.add(countTwo);
