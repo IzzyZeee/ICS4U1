@@ -2,6 +2,7 @@ package assignment1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class NumberSetProbabilityCounter {
     public static void main(String[] args) throws Exception {
@@ -10,27 +11,23 @@ public class NumberSetProbabilityCounter {
         // ex. [1, 2, 3, 3, 4, 5, 6, 67, 67, 67] and 67 would be 3/10 (3.3333%)
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("Hello fellow human! Enter your integers, and type an uppercase X when you're done:");
-        System.out.println();
+        System.out.println("Hello fellow human! Enter your integers separated by a /.");
 
         ArrayList<Integer> set = new ArrayList();
+        String list = keyboard.nextLine();
 
-        while (true) {
-            int number = 0;
+        StringTokenizer st = new StringTokenizer(list, "/");
 
-            if (keyboard.nextLine() == "X") {
-                break;
-            }
+        while (st.hasMoreElements()) {
 
-            try { // In case a non-integer value is entered (or other error)
-                number = Integer.parseInt(keyboard.nextLine());
-            } catch (Exception e) { // Error instantly quits so DON'T mess up lol
-                System.out.println("Invalid input, must be an integer.");
+            try {
+                // int num = Integer.parseInt(st.nextToken());
+                set.add(Integer.parseInt(st.nextToken()));
+            } catch (Exception e) {
+                System.out.println("Invalid input.");
                 System.exit(0);
             }
 
-            System.out.println();
-            set.add(number);
         }
 
         if (set.size() < 1) { // Can't have empty array, automatically quits
@@ -51,13 +48,13 @@ public class NumberSetProbabilityCounter {
                 System.exit(0);
             }
 
-        for (int i = 0; i < set.size(); i++) {
-            if (item == set.get(i)) {
+        for (int j = 0; j < set.size(); j++) {
+            if (item == set.get(j)) {
                 count ++;
             }
         }
 
-        System.out.println("The probability of getting a " + item + " in your set is " + count + "/" + set.size() + " or " + (count / set.size()) + "%.");
+        System.out.println("The probability of getting a " + item + " in your set is " + count + "/" + set.size() + " or " + ((double)count / set.size()) + "%.");
         keyboard.close();
 
     }
