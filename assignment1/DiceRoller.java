@@ -19,7 +19,7 @@ public class DiceRoller {
         for (int i = 0; i < number; i++) {
             double random = Math.random();
 
-            if (random == 1) { // Extremely rare case. It technically messes with the probability, but is negligible
+            if (random == 1) { 
                 result.add(6);
                 sum += 6;
                 countSix++; 
@@ -28,11 +28,11 @@ public class DiceRoller {
 
             for (int j = 1; j <= 6; j++) {
 
-                if (random < ((1.0 / 6) * (j))) { // Basically, checking each n/maxNumber for n is a whole number less than maxNumber
+                if (random < ((1.0 / 6) * (j))) { 
                     result.add(j);
                     sum += j;
                     
-                    switch (j) { // Add to their respective counts
+                    switch (j) { 
                         case 1:
                             countOne++;
                             break;
@@ -61,7 +61,7 @@ public class DiceRoller {
         }
 
     
-        result.add(sum); // So we can give back the sum/number counts- this'll be unpacked manually later (bad strategy though, needs optimization)
+        result.add(sum);
         result.add(countOne);
         result.add(countTwo);
         result.add(countThr);
@@ -79,14 +79,14 @@ public class DiceRoller {
 
         int number = 0;
 
-        try { // In case a non-integer value is entered (or other error)
+        try { 
             number = keyboard.nextInt();
         } catch (Exception e) {
             System.out.println("Invalid input, must be a positive integer.");
             System.exit(0);
         }
 
-        if (number <= 0) { // Makes sure valid input
+        if (number <= 0) { 
             System.out.println("Invalid input, must be a positive integer.");
             System.exit(0);
         }
@@ -96,8 +96,8 @@ public class DiceRoller {
         System.out.println("Your results are:");
         System.out.println();
 
-        for (int i = 0; i < (result.size() - 7); i++) { // Last 7 indexes are sum, then counts 1-6 respectively
-            System.out.println((i + 1) + ". " + result.get(i)); // Print roll result, numbered
+        for (int i = 0; i < (result.size() - 7); i++) { 
+            System.out.println((i + 1) + ". " + result.get(i)); 
         }
 
         System.out.println();
