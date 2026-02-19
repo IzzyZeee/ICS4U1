@@ -19,7 +19,7 @@ public class DiceRoller {
         for (int i = 0; i < number; i++) {
             double random = Math.random();
 
-            if (random == 1) { // Extremely rare case. It technically messes with the probability, but is negligible
+            if (random == 1) { // Extremely rare case. It is negligible
                 result.add(6);
                 sum += 6;
                 countSix++; 
@@ -32,7 +32,7 @@ public class DiceRoller {
                     result.add(j);
                     sum += j;
                     
-                    switch (j) { // Add to their respective counts
+                    switch (j) { // Switch case more efficient than if statements
                         case 1:
                             countOne++;
                             break;
@@ -61,7 +61,7 @@ public class DiceRoller {
         }
 
     
-        result.add(sum); // So we can give back the sum/number counts- this'll be unpacked manually later (bad strategy though, needs optimization)
+        result.add(sum); // So we can give back the sum/number counts
         result.add(countOne);
         result.add(countTwo);
         result.add(countThr);
@@ -109,6 +109,7 @@ public class DiceRoller {
         System.out.println("Fours: " + result.get(result.size() - 3));
         System.out.println("Fives: " + result.get(result.size() - 2));
         System.out.println("Sixes: " + result.get(result.size() - 1));
+
         keyboard.close();
     }
 }
