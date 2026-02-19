@@ -72,10 +72,6 @@ public class DiceRoller {
     }
 
     public static void main(String[] args) throws Exception {
-        // Rolls a 6-sided die, and returns a random number from 1-6
-        // You can choose how many dice you want to roll
-        // Will return the sum of all the dice you roll
-        // Will also tell you how many of each number you got
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Hello fellow human! How many dice do you want to roll? (Positive integer):");

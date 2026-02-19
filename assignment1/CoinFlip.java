@@ -18,9 +18,6 @@ public class CoinFlip {
     }
 
     public static void main(String[] args) throws Exception {
-        // Simple coin flip simulation - will flip a coin(s) that will land either Heads or Tails.
-        // You can choose how many coins to flip at once, and the results will be NUMBERED AND PRINTED
-
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Hello fellow human! How many coins do you want to flip? (Positive integer):");

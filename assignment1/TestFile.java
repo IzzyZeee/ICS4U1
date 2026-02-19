@@ -11,23 +11,23 @@ public class TestFile {
 
           //  public static ArrayList<Integer> generate(int numberOfRolls, int maxNumber) {
 
-        // int numberOfRolls = 10;
-        int maxNumber = 10;
+        // // int numberOfRolls = 10;
+        // int maxNumber = 10;
 
-        // for (int i = 0; i < numberOfRolls; i++) {
-            double random = Math.random();
+        // // for (int i = 0; i < numberOfRolls; i++) {
+        //     double random = Math.random();
 
-            if (random == 1) { // Extremely rare case. It technically messes with the probability, but is negligible
-                System.out.println(maxNumber);
-                // continue;
-            }
+        //     if (random == 1) { // Extremely rare case. It technically messes with the probability, but is negligible
+        //         System.out.println(maxNumber);
+        //         // continue;
+        //     }
 
-            for (int j = 1; j <= maxNumber; j++) {
-                if (random < ((1.0 / maxNumber) * (j))) { // Basically, checking each n/maxNumber for n is a whole number less than maxNumber
-                System.out.println(j);
-                break;
-                }
-            }
+        //     for (int j = 1; j <= maxNumber; j++) {
+        //         if (random < ((1.0 / maxNumber) * (j))) { // Basically, checking each n/maxNumber for n is a whole number less than maxNumber
+        //         System.out.println(j);
+        //         break;
+        //         }
+        //     }
 
         // }
 

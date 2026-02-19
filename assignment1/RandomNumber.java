@@ -31,8 +31,6 @@ public class RandomNumber {
     }
 
     public static void main(String[] args) throws Exception {
-        // Lets the user choose a positive integer, and gives a random number from zero to that integer
-        // Allows you to roll a chosen amount of times (at the same time)
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Hello fellow human! What number would you like to randomly generate from 1 to? (Positive integer, not 1):");
