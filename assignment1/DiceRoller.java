@@ -53,7 +53,7 @@ public class DiceRoller {
                             break;
                         }
 
-                    break;
+                    break; // Break
                 }
 
             }
