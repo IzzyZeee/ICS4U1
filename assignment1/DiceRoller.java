@@ -19,7 +19,7 @@ public class DiceRoller {
         for (int i = 0; i < number; i++) {
             double random = Math.random();
 
-            if (random == 1) { 
+            if (random == 1) { // Extremely rare case. It is negligible
                 result.add(6);
                 sum += 6;
                 countSix++; 
@@ -32,7 +32,7 @@ public class DiceRoller {
                     result.add(j);
                     sum += j;
                     
-                    switch (j) { 
+                    switch (j) {
                         case 1:
                             countOne++;
                             break;
@@ -60,8 +60,8 @@ public class DiceRoller {
 
         }
 
-    
-        result.add(sum);
+
+        result.add(sum); // So we can give back the sum/number counts
         result.add(countOne);
         result.add(countTwo);
         result.add(countThr);
@@ -109,6 +109,7 @@ public class DiceRoller {
         System.out.println("Fours: " + result.get(result.size() - 3));
         System.out.println("Fives: " + result.get(result.size() - 2));
         System.out.println("Sixes: " + result.get(result.size() - 1));
+
         keyboard.close();
     }
 }
