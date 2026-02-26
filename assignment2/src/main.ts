@@ -10,10 +10,13 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <h1> Cubic Solver </h1>
       </head>
       <body>
-        <p> a;dkjhdflkjhdflkj  5tgb5tg5tgb5tgb5tgb5tgb </p>
+        <input> a-value: </input>
+        <input> b-value: </input>
+        <input> c-value: </input>
+        <input> d-value: </input>
+        <br>
         <button type="submit"> Solve that cubic! </button>
         <button type="reset"> Clear </button>
-        <input> INPUT </input>
       </body>
     </div>
   </html>
